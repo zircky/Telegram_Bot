@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "result": [
+    {
+      "update_id": 286408398,
+      "message": {
+        "message_id": 3,
+        "from": {
+          "id": 641260625,
+          "is_bot": false,
+          "first_name": "Zircky",
+          "username": "Zircky1",
+          "language_code": "ru"
+        },
+        "chat": {
+          "id": 641260625,
+          "first_name": "Zircky",
+          "username": "Zircky1",
+          "type": "private"
+        },
+        "date": 1644565546,
+        "text": "hi"
+      }
+    },
+    {
+      "update_id": 286408399,
+      "message": {
+        "message_id": 4,
+        "from": {
+          "id": 641260625,
+          "is_bot": false,
+          "first_name": "Zircky",
+          "username": "Zircky1",
+          "language_code": "ru"
+        },
+        "chat": {
+          "id": 641260625,
+          "first_name": "Zircky",
+          "username": "Zircky1",
+          "type": "private"
+        },
+        "date": 1644566406,
+        "text": "hu"
+      }
+    }
+  ]
+}
