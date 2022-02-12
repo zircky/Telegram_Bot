@@ -1,6 +1,5 @@
 import requests
 import bot_token
-import json
 
 token = bot_token.token
 #https://api.telegram.org/bot5144129065:AAFQ9Fbq4dgKAzF70rVmdRFW-2-pbl8xDOA/sendMessage?chat_id=641260625&text=hi
@@ -16,8 +15,8 @@ def get_updates():
 def get_message():
     data = get_updates()
 
-    chatId = data['result'][1]['message']['chat']['id']
-    m_text = data['result'][1]['message']['text']
+    chatId = data['result'][-1]['message']['chat']['id']
+    m_text = data['result'][-1]['message']['text']
 
     message = {'chatId': chatId,
                'text': m_text}
@@ -39,9 +38,9 @@ def main():
     answer = get_message()
     chatId = answer['chatId']
 
-    send_message(chatId, 'test')
+    send_message(chatId, 'test нпвппакмк')
 
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
