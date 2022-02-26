@@ -1,10 +1,14 @@
 import requests
 import bot_token
+from yobit import get_btc
+from time import sleep
 
 token = bot_token.token
 #https://api.telegram.org/bot5144129065:AAFQ9Fbq4dgKAzF70rVmdRFW-2-pbl8xDOA/sendMessage?chat_id=641260625&text=hi
 URL = "https://api.telegram.org/bot" + token + "/"
 
+global list_update_id
+list_update_id = 0
 
 
 def get_updates():
@@ -15,8 +19,10 @@ def get_updates():
 def get_message():
     data = get_updates()
 
-    chatId = data['result'][-1]['message']['chat']['id']
-    m_text = data['result'][-1]['message']['text']
+    list_object = data['result'][-1]
+
+    chatId = list_object['message']['chat']['id']
+    m_text = list_object['message']['text']
 
     message = {'chatId': chatId,
                'text': m_text}
@@ -33,12 +39,15 @@ def send_message(chatId, text = ' Wait a second...'):
 def main():
     # d = get_updates()
 
-    # with open('updatas.json', 'w') as file:
-    #      json.dump(d, file, indent=2, ensure_ascii=False)
-    answer = get_message()
-    chatId = answer['chatId']
+    while True:
+        answer = get_message()
+        chatId = answer['chatId']
+        text = answer['text']
 
-    send_message(chatId, 'test нпвппакмк')
+        if text == '/btc':
+            send_message(chatId, get_btc())
+
+        sleep(2)
 
 
 
