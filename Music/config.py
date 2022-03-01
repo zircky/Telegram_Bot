@@ -16,7 +16,7 @@ UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "SUPERIOR_BOTS")
 ZAID_SUPPORT = getenv("ZAID_SUPPORT", "SUPERIOR_SUPPORT")
 ASS_ID = int(getenv("ASS_ID", ''))
 OWNER_ID = list(map(int, getenv('OWNER_ID', '').split()))
-
+BG_IMAGE = getenv("BG_IMAGE", "")
 BOT_USERNAME = getenv("BOT_USERNAME", "MusicYTBot")
 ASSISTANT_NAME = getenv("ASSISTANT_NAME", "Zircky")
 GROUP_SUPPORT = getenv("GROUP_SUPPORT", "MusicYTGroup")
